@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Inter, Space_Grotesk as SpaceGrotesk } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+
+import "./globals.css";
+import Navbar from "@/components/navagation/navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,6 +40,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
