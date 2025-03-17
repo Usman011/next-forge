@@ -1,4 +1,5 @@
-import { FieldValues, useFormContext } from "react-hook-form";
+import { Input } from '@/components/ui/input'
+import { FieldValues, useFormContext } from 'react-hook-form'
 
 import {
   FormControl,
@@ -6,32 +7,31 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/form'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { cn } from "@/lib/utils";
-import { INPUT_TYPES, InputFieldProps } from "@/types/form";
+} from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { cn } from '@/lib/utils'
+import { INPUT_TYPES, InputFieldProps } from '@/types/form'
 
 /**
  * Capitalizes the first letter of each word in a string
  */
 export const capitalizeText = (text: string) => {
   return text
-    .split(" ")
+    .split(' ')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(" ");
-};
+    .join(' ')
+}
 
 export interface SelectOptions {
-  label: string;
-  value: string | number;
+  label: string
+  value: string | number
 }
 
 /**
@@ -50,15 +50,15 @@ export const InputField = <TFieldValues extends FieldValues = FieldValues>({
   multiline = false,
   showIsRequired = false,
 }: InputFieldProps<TFieldValues>) => {
-  const { control } = useFormContext();
+  const { control } = useFormContext()
 
   // Common styling for form labels with required indicator
   const renderFormLabel = (labelText?: string) => (
-    <FormLabel className="paragraph-medium text-dark400_light700">
-      {capitalizeText(labelText || "")}
-      {showIsRequired && <span className="text-red-500">{` * `}</span>}
+    <FormLabel className='paragraph-medium text-dark400_light700'>
+      {capitalizeText(labelText || '')}
+      {showIsRequired && <span className='text-red-500'>{` * `}</span>}
     </FormLabel>
-  );
+  )
 
   // Common props for input elements
   const commonInputProps = {
@@ -67,8 +67,8 @@ export const InputField = <TFieldValues extends FieldValues = FieldValues>({
     defaultValue,
     disabled,
     className:
-      "paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 no-focus min-h-12 resize-none rounded-1.5 border",
-  };
+      'paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 no-focus min-h-12 resize-none rounded-1.5 border',
+  }
 
   return (
     <FormField
@@ -81,7 +81,7 @@ export const InputField = <TFieldValues extends FieldValues = FieldValues>({
               <FormItem
                 className={cn(
                   className,
-                  "flex items-center w-full flex-col gap-2.5"
+                  'flex items-center w-full flex-col gap-2.5'
                 )}
               >
                 {renderFormLabel(label)}
@@ -90,13 +90,13 @@ export const InputField = <TFieldValues extends FieldValues = FieldValues>({
                     {...field}
                     value={defaultValue}
                     type={type}
-                    className="size-4 rounded-sm"
+                    className='size-4 rounded-sm'
                     disabled={disabled}
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
-            );
+            )
 
           case INPUT_TYPES.SELECT:
             return (
@@ -110,7 +110,7 @@ export const InputField = <TFieldValues extends FieldValues = FieldValues>({
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue
-                        placeholder={capitalizeText(placeholder || "")}
+                        placeholder={capitalizeText(placeholder || '')}
                       />
                     </SelectTrigger>
                   </FormControl>
@@ -125,7 +125,7 @@ export const InputField = <TFieldValues extends FieldValues = FieldValues>({
                 </Select>
                 <FormMessage />
               </FormItem>
-            );
+            )
 
           default:
             if (multiline) {
@@ -144,7 +144,7 @@ export const InputField = <TFieldValues extends FieldValues = FieldValues>({
                   </FormControl>
                   <FormMessage />
                 </FormItem>
-              );
+              )
             }
 
             return (
@@ -155,9 +155,9 @@ export const InputField = <TFieldValues extends FieldValues = FieldValues>({
                 </FormControl>
                 <FormMessage />
               </FormItem>
-            );
+            )
         }
       }}
     />
-  );
-};
+  )
+}
