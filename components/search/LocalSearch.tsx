@@ -1,13 +1,13 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { Input } from '../ui/input'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname, useSearchParams, useRouter } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
+
 import { formUrlQuery, removeKeyFromUrl } from '@/lib/url'
-import { useRouter } from 'next/navigation'
-import { url } from 'inspector'
+import { cn } from '@/lib/utils'
+
+import { Input } from '../ui/input'
 
 interface LocalSearchProps {
   route: string
