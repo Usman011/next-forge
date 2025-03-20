@@ -7,9 +7,9 @@
   },
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
-  "prettier.semi": true,
-  "prettier.singleQuote": false,
-  "prettier.jsxSingleQuote": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
   "prettier.trailingComma": "es5",
   "prettier.arrowParens": "always",
   "[json]": {
@@ -26,10 +26,10 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "files.exclude": {
-    "**/.vscode": true,
+    // "**/.vscode": true,
     "**/.next": true,
     "**/node_modules": true,
-    "**/public": true,
+    // "**/public": true,
     "**/next-env.d.ts": true
   }
 }
