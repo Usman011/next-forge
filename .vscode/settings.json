@@ -29,7 +29,8 @@
     // "**/.vscode": true,
     "**/.next": true,
     "**/node_modules": true,
-    // "**/public": true,
+    "**/public": true,
     "**/next-env.d.ts": true
-  }
+  },
+  "cSpell.words": ["mdxeditor", "upvotes"]
 }
