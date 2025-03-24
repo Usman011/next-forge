@@ -1,12 +1,17 @@
-export default function AskQuestion() {
+import React from 'react'
+
+import QuestionForm from '@/components/forms/QuestionForm'
+
+const AskAQuestion = () => {
   return (
-    <div className='flex flex-col items-center gap-8 py-10'>
-      <h1 className='h1-bold text-dark100_light900'>All Users</h1>
-      <div className='flex w-full flex-col'>
-        <div className='text-dark200_light800 text-center'>
-          Ask a question page content coming soon
-        </div>
+    <>
+      <h1 className='h1-bold text-dark100_light900'>Ask a question</h1>
+
+      <div className='mt-9'>
+        <QuestionForm />
       </div>
-    </div>
+    </>
   )
 }
+
+export default AskAQuestion
