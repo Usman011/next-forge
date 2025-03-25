@@ -32,5 +32,5 @@
     "**/public": true,
     "**/next-env.d.ts": true
   },
-  "cSpell.words": ["mdxeditor", "upvotes"]
+  "cSpell.words": ["downvotes", "mdxeditor", "upvotes"]
 }
