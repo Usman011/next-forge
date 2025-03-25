@@ -5,8 +5,6 @@ import HomeFilter from '@/components/filters/HomeFilter'
 import LocalSearch from '@/components/search/LocalSearch'
 import { Button } from '@/components/ui/button'
 import ROUTES from '@/constants/routes'
-import handleError from '@/lib/handlers/error'
-import { ValidationError } from '@/lib/http-errors'
 
 const questionsData: Question[] = [
   {
@@ -45,26 +43,11 @@ const questionsData: Question[] = [
   },
 ]
 
-const test = async () => {
-  try {
-    throw new ValidationError({
-      title: ['Required'],
-      tags: ['Required'],
-      author: ['Required'],
-    })
-  } catch (error) {
-    const response = handleError(error)
-    console.log(response)
-  }
-}
-
 interface SearchParams {
   searchParams: Promise<{ [key: string]: string }>
 }
 
 export default async function Home({ searchParams }: SearchParams) {
-  const response = await test()
-  console.log(response)
   const { query = '', filter = '' } = await searchParams
   const filteredQuestions = questionsData.filter(
     (question: {
