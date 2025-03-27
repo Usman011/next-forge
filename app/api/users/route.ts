@@ -6,7 +6,7 @@ import { ValidationError } from '@/lib/http-errors'
 import dbConnect from '@/lib/mongoose'
 import { UserSchema } from '@/lib/validations'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     await dbConnect()
     const users = await User.find()
