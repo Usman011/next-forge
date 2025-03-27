@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 
 import Account from '@/database/account.model'
-import User from '@/database/user.model'
 import handleError from '@/lib/handlers/error'
 import { NotFoundError, ValidationError } from '@/lib/http-errors'
 import dbConnect from '@/lib/mongoose'
