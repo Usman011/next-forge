@@ -45,3 +45,13 @@ export type InputFieldProps<TFieldValues extends FieldValues> = {
   maxTags?: number
   tagLength?: number
 }
+
+export interface SigninWithOAuthProps {
+  provider: 'google' | 'github'
+  providerAccountId: string
+  user: {
+    name?: string
+    email?: string
+    image?: string
+  }
+}
